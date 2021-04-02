@@ -1,0 +1,125 @@
+{
+	"name": "go-nav-bar",
+	"displayName": "Go Nav Bar",
+	"description": "UI navigation elements for the vscode go menu",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.55.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:GoNavBar.goForward",
+		"onCommand:GoNavBar.goBack",
+		"onCommand:GoNavBar.goLastEditLocation"
+	],
+	"main": "./dist/extension.js",
+	"contributes": {
+		"configuration": [
+			{
+				"title": "Go Nav Bar configuration",
+				"properties": {
+					"GoNavBar.goForward": {
+						"title": "Go Forward",
+						"type": "boolean",
+						"default": true,
+						"description": "show icon for 'Go Forward'"
+					},
+					"GoNavBar.goBack": {
+						"title": "Go Back",
+						"type": "boolean",
+						"default": true,
+						"description": "show icon for 'Go Back'"
+					},
+					"GoNavBar.goLastEditLocation": {
+						"title": "Go Last Edit Location",
+						"type": "boolean",
+						"default": true,
+						"description": "show icon for 'Go Last Edit Location'"
+					}
+				}
+			}
+		],
+		"commands": [
+			{
+				"command": "GoNavBar.goForward",
+				"category": "ShortcutMenuBar",
+				"title": "Go Forward",
+				"icon": {
+					"dark": "images/arrow_forward_ios_white_18dp.svg",
+					"light": "images/arrow_forward_ios_black_18dp.svg"
+				}
+			},
+			{
+				"command": "GoNavBar.goBack",
+				"category": "ShortcutMenuBar",
+				"title": "Go Back",
+				"icon": {
+					"dark": "images/arrow_back_ios_white_18dp.svg",
+					"light": "images/arrow_back_ios_black_18dp.svg"
+				}
+			},
+			{
+				"command": "GoNavBar.goLastEditLocation",
+				"category": "ShortcutMenuBar",
+				"title": "Go Last Edit Location",
+				"icon": {
+					"dark": "images/edit_location_alt_white_18dp.svg",
+					"light": "images/edit_location_alt_black_18dp.svg"
+				}
+			}
+		],
+		"menus": {
+			"editor/title": [
+				{
+					"when": "config.GoNavBar.goBack",
+					"command": "GoNavBar.goBack",
+					"group": "navigation"
+				},
+				{
+					"when": "config.GoNavBar.goForward",
+					"command": "GoNavBar.goForward",
+					"group": "navigation"
+				},
+				{
+					"when": "config.GoNavBar.goLastEditLocation",
+					"command": "GoNavBar.goLastEditLocation",
+					"group": "navigation"
+				}
+			]
+		}
+	},
+	"menus": {},
+	"scripts": {
+		"vscode:prepublish": "yarn run package",
+		"compile": "webpack",
+		"watch": "webpack --watch",
+		"package": "webpack --mode production --devtool hidden-source-map",
+		"test-compile": "tsc -p ./",
+		"test-watch": "tsc -watch -p ./",
+		"pretest": "yarn run test-compile && yarn run lint",
+		"lint": "eslint src --ext ts",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/glob": "^7.1.3",
+		"@types/mocha": "^8.0.4",
+		"@types/node": "^12.11.7",
+		"@types/vscode": "^1.55.0",
+		"@typescript-eslint/eslint-plugin": "^4.14.1",
+		"@typescript-eslint/parser": "^4.14.1",
+		"eslint": "^7.19.0",
+		"eslint-plugin-sonarjs": "^0.6.0",
+		"glob": "^7.1.6",
+		"mocha": "^8.2.1",
+		"ts-loader": "^8.0.14",
+		"typescript": "^4.1.3",
+		"vscode-test": "^1.5.0",
+		"webpack": "^5.19.0",
+		"webpack-cli": "^4.4.0"
+	},
+	"dependencies": {
+		"@material-ui/icons": "^4.11.2"
+	}
+}
