@@ -72,4 +72,8 @@ Ensure that you've read through the extensions guidelines and follow the best pr
 
 ## Material Icons
 
+Add both icons dark #C5C5C5 and light #424242 to images/ folder
+
 * [Google Font Material Icons](https://fonts.google.com/icons?selected=Material+Icons)
+* [Material Design Icons](https://materialdesignicons.com/)
+* [Flat Icon](https://www.flaticon.com/)

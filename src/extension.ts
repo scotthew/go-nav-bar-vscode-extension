@@ -30,7 +30,15 @@ export function activate(context: ExtensionContext): void {
 		void commands.executeCommand('workbench.action.navigateToLastEditLocation');
 	});
 
-	context.subscriptions.push(goForward, goBack, goLastEditLocation);
+	const goToBracket = commands.registerCommand('GoNavBar.goToBracket', () => {
+		void commands.executeCommand('editor.action.jumpToBracket');
+	});
+
+	const saveWithoutFormat = commands.registerCommand('GoNavBar.saveWithoutFormatting', () => {
+		void commands.executeCommand('workbench.action.files.saveWithoutFormatting');
+	});
+
+	context.subscriptions.push(goForward, goBack, goLastEditLocation, goToBracket, saveWithoutFormat);
 }
 
 // this method is called when your extension is deactivated
