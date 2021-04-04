@@ -1,13 +1,53 @@
 {
 	"name": "go-nav-bar",
 	"displayName": "Go Nav Bar",
-	"description": "UI navigation elements for the vscode go menu",
+	"description": "Navigation shortcut buttons for the VSCode go menu commands",
 	"version": "0.0.1",
 	"engines": {
 		"vscode": "^1.55.0"
 	},
+	"publisher": "Scottward LLC",
+	"license": "SEE LICENSE IN LICENSE",
+	"homepage": "https://github.com/scotthew/go-nav-bar-vscode-extension#readme",
+	"icon": "images/go_nav_bar_icon.png",
+	"galleryBanner": {
+		"color": "#00FFFF",
+		"theme": "dark"
+	},
+	"bugs": {
+		"url": "https://github.com/scotthew/go-nav-bar-vscode-extension/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/scotthew/go-nav-bar-vscode-extension.git"
+	},
 	"categories": [
-		"Other"
+		"Programming Languages",
+		"Other",
+		"Visualization"
+	],
+	"keywords": [
+		"bar",
+		"button",
+		"editor",
+		"editor title menu",
+		"go",
+		"go back",
+		"go editor title menu",
+		"go forward",
+		"go nav bar",
+		"gonavbar",
+		"menu",
+		"menubar",
+		"nav",
+		"navbar",
+		"navigation",
+		"shortcut",
+		"shortcuts",
+		"status",
+		"title",
+		"tool",
+		"toolbar"
 	],
 	"activationEvents": [
 		"onCommand:GoNavBar.goForward",
