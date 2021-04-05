@@ -6,7 +6,7 @@
 	"engines": {
 		"vscode": "^1.55.0"
 	},
-	"publisher": "ScottwardLLC",
+	"publisher": "Scotthew",
 	"license": "SEE LICENSE IN LICENSE",
 	"homepage": "https://github.com/scotthew/go-nav-bar-vscode-extension#readme",
 	"icon": "images/go_nav_bar_icon.png",

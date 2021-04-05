@@ -1,10 +1,10 @@
-# Go Nav Bar README
+# Go Nav Bar
 
-This is the README for your extension "Go Nav Bar". After writing up a brief description, we recommend including the following sections.
+ "Go Nav Bar" adds editor title menu items for go navigation commands and other useful commands.
 
-## Features
+## Editor Title Menu Buttons
 
-Adds editor title menu items for go navigation commands and other useful commands including:
+Editor title menu buttons include:
 
 - Go -> Forward
 - Go -> Back
