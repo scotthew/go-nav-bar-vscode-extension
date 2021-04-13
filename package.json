@@ -9,9 +9,9 @@
 	"publisher": "Scotthew",
 	"license": "SEE LICENSE IN LICENSE",
 	"homepage": "https://github.com/scotthew/go-nav-bar-vscode-extension#readme",
-	"icon": "images/go_nav_bar_icon.png",
+	"icon": "images/go_nav_bar_icon_dark.png",
 	"galleryBanner": {
-		"color": "#00FFFF",
+		"color": "#00838f",
 		"theme": "dark"
 	},
 	"bugs": {
@@ -52,7 +52,9 @@
 	"activationEvents": [
 		"onCommand:GoNavBar.goForward",
 		"onCommand:GoNavBar.goBack",
-		"onCommand:GoNavBar.goLastEditLocation"
+		"onCommand:GoNavBar.goLastEditLocation",
+		"onCommand:GoNavBar.goToBracket",
+		"onCommand:GoNavBar.saveWithoutFormatting"
 	],
 	"main": "./dist/extension.js",
 	"contributes": {
@@ -143,17 +145,17 @@
 		"menus": {
 			"editor/title": [
 				{
-					"when": "config.GoNavBar.goBack",
+					"when": "config.GoNavBar.goBack && canNavigateBack",
 					"command": "GoNavBar.goBack",
 					"group": "navigation"
 				},
 				{
-					"when": "config.GoNavBar.goForward",
+					"when": "config.GoNavBar.goForward && canNavigateForward",
 					"command": "GoNavBar.goForward",
 					"group": "navigation"
 				},
 				{
-					"when": "config.GoNavBar.goLastEditLocation",
+					"when": "config.GoNavBar.goLastEditLocation && canNavigateToLastEditLocation",
 					"command": "GoNavBar.goLastEditLocation",
 					"group": "navigation"
 				},
@@ -163,7 +165,7 @@
 					"group": "navigation"
 				},
 				{
-					"when": "config.GoNavBar.saveWithoutFormatting",
+					"when": "config.GoNavBar.saveWithoutFormatting && !editorReadonly",
 					"command": "GoNavBar.saveWithoutFormatting",
 					"group": "navigation"
 				}

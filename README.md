@@ -12,7 +12,7 @@ Editor title menu buttons include:
 - Go -> Go to Bracket
 - File -> Save without Formatting
 
-![Go Nav Bar Screenshot]('/images/go_nav_bar_screenshot.png')
+![Go Nav Bar Screenshot](/images/go_nav_bar_screenshot.png)
 
 ## Extension Settings
 
