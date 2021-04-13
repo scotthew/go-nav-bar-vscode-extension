@@ -34,6 +34,10 @@ All buttons use the default VSCode keybindings.  There is currently no support f
 
 Initial release of go-nav-bar
 
+### 0.1.0
+
+Fixed icon enable/disable to properly toggle.
+
 ## Adding new Icons
 
 Add both icons dark #C5C5C5 and light #424242 to images/ folder
