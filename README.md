@@ -34,9 +34,17 @@ All buttons use the default VSCode keybindings.  There is currently no support f
 
 Initial release of go-nav-bar
 
-### 0.1.0
+### 0.2.0
 
-Fixed icon enable/disable to properly toggle.
+Updated menu items to use "enablement" instead of "when".  This causes icons to be enabled/disabled instead of added/removed to provide a more consistent editor toolbar.
+
+### 0.2.1
+
+Updated mac keybindings to be VSCode defaults.
+
+### 0.2.2
+
+Updated readme and yarn packages.
 
 ## Adding new Icons
 
