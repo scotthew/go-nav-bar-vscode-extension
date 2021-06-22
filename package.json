@@ -4,7 +4,7 @@
     "description": "Navigation shortcut buttons for the VSCode go menu commands",
     "version": "0.3.0",
     "engines": {
-        "vscode": "^1.56.0"
+        "vscode": "^1.57.0"
     },
     "publisher": "Scotthew",
     "license": "SEE LICENSE IN LICENSE",
