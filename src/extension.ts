@@ -38,7 +38,15 @@ export function activate(context: ExtensionContext): void {
 		void commands.executeCommand('workbench.action.files.saveWithoutFormatting');
 	});
 
-	context.subscriptions.push(goForward, goBack, goLastEditLocation, goToBracket, saveWithoutFormat);
+	const balanceOut = commands.registerCommand('GoNavBar.balanceOut', () => {
+		void commands.executeCommand('editor.emmet.action.balanceOut');
+	});
+
+	const balanceIn = commands.registerCommand('GoNavBar.balanceIn', () => {
+		void commands.executeCommand('editor.emmet.action.balanceIn');
+	});
+
+	context.subscriptions.push(goForward, goBack, goLastEditLocation, goToBracket, saveWithoutFormat, balanceIn, balanceOut);
 }
 
 // this method is called when your extension is deactivated

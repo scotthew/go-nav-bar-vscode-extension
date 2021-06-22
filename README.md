@@ -46,6 +46,10 @@ Updated mac keybindings to be VSCode defaults.
 
 Updated readme and yarn packages.
 
+### 0.3.0
+
+Added "Balance Inward" and "Balance Outward" shortcuts.
+
 ## Adding new Icons
 
 Add both icons dark #C5C5C5 and light #424242 to images/ folder

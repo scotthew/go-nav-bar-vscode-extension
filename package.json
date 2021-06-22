@@ -2,7 +2,7 @@
     "name": "go-nav-bar",
     "displayName": "Go Nav Bar",
     "description": "Navigation shortcut buttons for the VSCode go menu commands",
-    "version": "0.2.2",
+    "version": "0.3.0",
     "engines": {
         "vscode": "^1.56.0"
     },
@@ -54,7 +54,9 @@
         "onCommand:GoNavBar.goBack",
         "onCommand:GoNavBar.goLastEditLocation",
         "onCommand:GoNavBar.goToBracket",
-        "onCommand:GoNavBar.saveWithoutFormatting"
+        "onCommand:GoNavBar.saveWithoutFormatting",
+        "onCommand:GoNavBar.balanceOut",
+        "onCommand:GoNavBar.balanceIn"
     ],
     "main": "./dist/extension.js",
     "contributes": {
@@ -91,6 +93,18 @@
                         "type": "boolean",
                         "default": true,
                         "description": "show icon for 'Save Without Formatting'"
+                    },
+                    "GoNavBar.balanceOut": {
+                        "title": "Balance Outward",
+                        "type": "boolean",
+                        "default": true,
+                        "description": "show icon for 'Balance Outward'"
+                    },
+                    "GoNavBar.balanceIn": {
+                        "title": "Balance Inward",
+                        "type": "boolean",
+                        "default": true,
+                        "description": "show icon for 'Balance Inward'"
                     }
                 }
             }
@@ -144,6 +158,26 @@
                     "light": "images/save_light_18dp.png"
                 },
                 "enablement": "!editorReadonly"
+            },
+            {
+                "command": "GoNavBar.balanceOut",
+                "category": "ShortcutMenuBar",
+                "title": "Balance Outward",
+                "icon": {
+                    "dark": "images/baseline_format_indent_decrease_dark_18dp.png",
+                    "light": "images/baseline_format_indent_decrease_light_18dp.png"
+                },
+                "enablement": "!editorReadonly"
+            },
+            {
+                "command": "GoNavBar.balanceIn",
+                "category": "ShortcutMenuBar",
+                "title": "Balance Inward",
+                "icon": {
+                    "dark": "images/baseline_format_indent_increase_dark_18dp.png",
+                    "light": "images/baseline_format_indent_increase_light_18dp.png"
+                },
+                "enablement": "!editorReadonly"
             }
         ],
         "menus": {
@@ -171,6 +205,16 @@
                 {
                     "when": "config.GoNavBar.saveWithoutFormatting",
                     "command": "GoNavBar.saveWithoutFormatting",
+                    "group": "navigation"
+                },
+                {
+                    "when": "config.GoNavBar.balanceOut",
+                    "command": "GoNavBar.balanceOut",
+                    "group": "navigation"
+                },
+                {
+                    "when": "config.GoNavBar.balanceIn",
+                    "command": "GoNavBar.balanceIn",
                     "group": "navigation"
                 }
             ]
@@ -200,6 +244,16 @@
                 "command": "GoNavBar.saveWithoutFormatting",
                 "key": "Ctrl+K Ctrl+Shift+S",
                 "mac": "Cmd+K Cmd+S"
+            },
+            {
+                "command": "GoNavBar.balanceOut",
+                "key": "Ctrl+Shift+Up",
+                "mac": "Ctrl+Shift+Up"
+            },
+            {
+                "command": "GoNavBar.balanceIn",
+                "key": "Ctrl+Shift+Down",
+                "mac": "Ctrl+Shift+Down"
             }
         ]
     },
@@ -219,19 +273,19 @@
     "devDependencies": {
         "@types/glob": "^7.1.3",
         "@types/mocha": "^8.0.4",
-        "@types/node": "^15.3.0",
-        "@types/vscode": "^1.56.0",
-        "@typescript-eslint/eslint-plugin": "^4.24.0",
-        "@typescript-eslint/parser": "^4.24.0",
-        "eslint": "^7.26.0",
-        "eslint-plugin-sonarjs": "^0.7.0",
+        "@types/node": "^15.12.4",
+        "@types/vscode": "^1.57.0",
+        "@typescript-eslint/eslint-plugin": "^4.28.0",
+        "@typescript-eslint/parser": "^4.28.0",
+        "eslint": "^7.29.0",
+        "eslint-plugin-sonarjs": "^0.8.0-125",
         "glob": "^7.1.7",
-        "mocha": "^8.4.0",
-        "ts-loader": "^9.1.2",
-        "typescript": "^4.2.4",
+        "mocha": "^9.0.1",
+        "ts-loader": "^9.2.3",
+        "typescript": "^4.3.4",
         "vscode-test": "^1.5.0",
-        "webpack": "^5.37.0",
-        "webpack-cli": "^4.7.0"
+        "webpack": "^5.40.0",
+        "webpack-cli": "^4.7.2"
     },
     "dependencies": {
         "@material-ui/icons": "^4.11.2"
