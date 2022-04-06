@@ -2,7 +2,7 @@
   "name": "go-nav-bar",
   "displayName": "Go Nav Bar",
   "description": "Navigation shortcut buttons for the VSCode go menu commands",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "engines": {
     "vscode": "^1.57.0"
   },
@@ -58,8 +58,8 @@
     "onCommand:GoNavBar.balanceOut",
     "onCommand:GoNavBar.balanceIn"
   ],
-  "main": "./dist/extension.js",
-  "browser": "./dist/extension.js",
+  "main": "./dist/main.js",
+  "browser": "./dist/main.js",
   "contributes": {
     "configuration": [
       {
@@ -266,10 +266,13 @@
     "package": "webpack --mode production --devtool hidden-source-map",
     "pretest": "yarn run test-compile && yarn run lint",
     "test": "node ./out/test/runTest.js",
-    "test-compile": "tsc -p ./",
     "test-watch": "tsc -watch -p ./",
-    "vscode:prepublish": "yarn run package",
-    "watch": "webpack --watch"
+    "watch": "webpack --watch",
+    "vscode:prepublish": "npm run esbuild-base -- --minify",
+    "esbuild-base": "esbuild ./src/extension.ts --bundle --outfile=dist/main.js --external:vscode --format=cjs --platform=node",
+    "esbuild": "npm run esbuild-base -- --sourcemap",
+    "esbuild-watch": "npm run esbuild-base -- --sourcemap --watch",
+    "test-compile": "tsc -p ./"
   },
   "devDependencies": {
     "@types/glob": "^7.1.3",
@@ -278,6 +281,7 @@
     "@types/vscode": "^1.57.0",
     "@typescript-eslint/eslint-plugin": "^4.28.0",
     "@typescript-eslint/parser": "^4.28.0",
+    "esbuild": "^0.14.32",
     "eslint": "^7.29.0",
     "eslint-plugin-sonarjs": "^0.8.0-125",
     "glob": "^7.1.7",
