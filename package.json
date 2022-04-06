@@ -1,293 +1,294 @@
 {
-    "name": "go-nav-bar",
-    "displayName": "Go Nav Bar",
-    "description": "Navigation shortcut buttons for the VSCode go menu commands",
-    "version": "0.4.0",
-    "engines": {
-        "vscode": "^1.57.0"
-    },
-    "publisher": "Scotthew",
-    "license": "SEE LICENSE IN LICENSE",
-    "homepage": "https://github.com/scotthew/go-nav-bar-vscode-extension#readme",
-    "icon": "images/go_nav_bar_icon_dark.png",
-    "galleryBanner": {
-        "color": "#00838f",
-        "theme": "dark"
-    },
-    "bugs": {
-        "url": "https://github.com/scotthew/go-nav-bar-vscode-extension/issues"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/scotthew/go-nav-bar-vscode-extension.git"
-    },
-    "categories": [
-        "Programming Languages",
-        "Other",
-        "Visualization"
+  "name": "go-nav-bar",
+  "displayName": "Go Nav Bar",
+  "description": "Navigation shortcut buttons for the VSCode go menu commands",
+  "version": "0.4.0",
+  "engines": {
+    "vscode": "^1.57.0"
+  },
+  "publisher": "Scotthew",
+  "license": "SEE LICENSE IN LICENSE",
+  "homepage": "https://github.com/scotthew/go-nav-bar-vscode-extension#readme",
+  "icon": "images/go_nav_bar_icon_dark.png",
+  "galleryBanner": {
+    "color": "#00838f",
+    "theme": "dark"
+  },
+  "bugs": {
+    "url": "https://github.com/scotthew/go-nav-bar-vscode-extension/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/scotthew/go-nav-bar-vscode-extension.git"
+  },
+  "categories": [
+    "Programming Languages",
+    "Other",
+    "Visualization"
+  ],
+  "keywords": [
+    "bar",
+    "button",
+    "editor",
+    "editor title menu",
+    "go",
+    "go back",
+    "go editor title menu",
+    "go forward",
+    "go nav bar",
+    "gonavbar",
+    "menu",
+    "menubar",
+    "nav",
+    "navbar",
+    "navigation",
+    "shortcut",
+    "shortcuts",
+    "status",
+    "title",
+    "tool",
+    "toolbar"
+  ],
+  "activationEvents": [
+    "onCommand:GoNavBar.goForward",
+    "onCommand:GoNavBar.goBack",
+    "onCommand:GoNavBar.goLastEditLocation",
+    "onCommand:GoNavBar.goToBracket",
+    "onCommand:GoNavBar.saveWithoutFormatting",
+    "onCommand:GoNavBar.balanceOut",
+    "onCommand:GoNavBar.balanceIn"
+  ],
+  "main": "./dist/extension.js",
+  "browser": "./dist/extension.js",
+  "contributes": {
+    "configuration": [
+      {
+        "title": "Go Nav Bar configuration",
+        "properties": {
+          "GoNavBar.goForward": {
+            "title": "Go Forward",
+            "type": "boolean",
+            "default": true,
+            "description": "show icon for 'Go Forward'"
+          },
+          "GoNavBar.goBack": {
+            "title": "Go Back",
+            "type": "boolean",
+            "default": true,
+            "description": "show icon for 'Go Back'"
+          },
+          "GoNavBar.goLastEditLocation": {
+            "title": "Go Last Edit Location",
+            "type": "boolean",
+            "default": true,
+            "description": "show icon for 'Go Last Edit Location'"
+          },
+          "GoNavBar.goToBracket": {
+            "title": "Go To Bracket",
+            "type": "boolean",
+            "default": true,
+            "description": "show icon for 'Go To Bracket'"
+          },
+          "GoNavBar.saveWithoutFormatting": {
+            "title": "Save Without Formatting",
+            "type": "boolean",
+            "default": true,
+            "description": "show icon for 'Save Without Formatting'"
+          },
+          "GoNavBar.balanceOut": {
+            "title": "Balance Outward",
+            "type": "boolean",
+            "default": true,
+            "description": "show icon for 'Balance Outward'"
+          },
+          "GoNavBar.balanceIn": {
+            "title": "Balance Inward",
+            "type": "boolean",
+            "default": true,
+            "description": "show icon for 'Balance Inward'"
+          }
+        }
+      }
     ],
-    "keywords": [
-        "bar",
-        "button",
-        "editor",
-        "editor title menu",
-        "go",
-        "go back",
-        "go editor title menu",
-        "go forward",
-        "go nav bar",
-        "gonavbar",
-        "menu",
-        "menubar",
-        "nav",
-        "navbar",
-        "navigation",
-        "shortcut",
-        "shortcuts",
-        "status",
-        "title",
-        "tool",
-        "toolbar"
-    ],
-    "activationEvents": [
-        "onCommand:GoNavBar.goForward",
-        "onCommand:GoNavBar.goBack",
-        "onCommand:GoNavBar.goLastEditLocation",
-        "onCommand:GoNavBar.goToBracket",
-        "onCommand:GoNavBar.saveWithoutFormatting",
-        "onCommand:GoNavBar.balanceOut",
-        "onCommand:GoNavBar.balanceIn"
-    ],
-    "main": "./dist/extension.js",
-    "contributes": {
-        "configuration": [
-            {
-                "title": "Go Nav Bar configuration",
-                "properties": {
-                    "GoNavBar.goForward": {
-                        "title": "Go Forward",
-                        "type": "boolean",
-                        "default": true,
-                        "description": "show icon for 'Go Forward'"
-                    },
-                    "GoNavBar.goBack": {
-                        "title": "Go Back",
-                        "type": "boolean",
-                        "default": true,
-                        "description": "show icon for 'Go Back'"
-                    },
-                    "GoNavBar.goLastEditLocation": {
-                        "title": "Go Last Edit Location",
-                        "type": "boolean",
-                        "default": true,
-                        "description": "show icon for 'Go Last Edit Location'"
-                    },
-                    "GoNavBar.goToBracket": {
-                        "title": "Go To Bracket",
-                        "type": "boolean",
-                        "default": true,
-                        "description": "show icon for 'Go To Bracket'"
-                    },
-                    "GoNavBar.saveWithoutFormatting": {
-                        "title": "Save Without Formatting",
-                        "type": "boolean",
-                        "default": true,
-                        "description": "show icon for 'Save Without Formatting'"
-                    },
-                    "GoNavBar.balanceOut": {
-                        "title": "Balance Outward",
-                        "type": "boolean",
-                        "default": true,
-                        "description": "show icon for 'Balance Outward'"
-                    },
-                    "GoNavBar.balanceIn": {
-                        "title": "Balance Inward",
-                        "type": "boolean",
-                        "default": true,
-                        "description": "show icon for 'Balance Inward'"
-                    }
-                }
-            }
-        ],
-        "commands": [
-            {
-                "command": "GoNavBar.goBack",
-                "category": "ShortcutMenuBar",
-                "title": "Go Back",
-                "icon": {
-                    "dark": "images/arrow_back_ios_dark_18dp.png",
-                    "light": "images/arrow_back_ios_light_18dp.png"
-                },
-                "enablement": "canNavigateBack"
-            },
-            {
-                "command": "GoNavBar.goForward",
-                "category": "ShortcutMenuBar",
-                "title": "Go Forward",
-                "icon": {
-                    "dark": "images/arrow_forward_ios_dark_18dp.png",
-                    "light": "images/arrow_forward_ios_light_18dp.png"
-                },
-                "enablement": "canNavigateForward"
-            },
-            {
-                "command": "GoNavBar.goLastEditLocation",
-                "category": "ShortcutMenuBar",
-                "title": "Go Last Edit Location",
-                "icon": {
-                    "dark": "images/edit_location_alt_dark_18dp.png",
-                    "light": "images/edit_location_alt_light_18dp.png"
-                },
-                "enablement": "canNavigateToLastEditLocation"
-            },
-            {
-                "command": "GoNavBar.goToBracket",
-                "category": "ShortcutMenuBar",
-                "title": "Go To Bracket",
-                "icon": {
-                    "dark": "images/code_braces_dark.png",
-                    "light": "images/code_braces_light.png"
-                }
-            },
-            {
-                "command": "GoNavBar.saveWithoutFormatting",
-                "category": "ShortcutMenuBar",
-                "title": "Save Without Formatting",
-                "icon": {
-                    "dark": "images/save_dark_18dp.png",
-                    "light": "images/save_light_18dp.png"
-                },
-                "enablement": "!editorReadonly"
-            },
-            {
-                "command": "GoNavBar.balanceOut",
-                "category": "ShortcutMenuBar",
-                "title": "Balance Outward",
-                "icon": {
-                    "dark": "images/baseline_format_indent_decrease_dark_18dp.png",
-                    "light": "images/baseline_format_indent_decrease_light_18dp.png"
-                },
-                "enablement": "!editorReadonly"
-            },
-            {
-                "command": "GoNavBar.balanceIn",
-                "category": "ShortcutMenuBar",
-                "title": "Balance Inward",
-                "icon": {
-                    "dark": "images/baseline_format_indent_increase_dark_18dp.png",
-                    "light": "images/baseline_format_indent_increase_light_18dp.png"
-                },
-                "enablement": "!editorReadonly"
-            }
-        ],
-        "menus": {
-            "editor/title": [
-                {
-                    "when": "config.GoNavBar.goBack",
-                    "command": "GoNavBar.goBack",
-                    "group": "navigation"
-                },
-                {
-                    "when": "config.GoNavBar.goForward",
-                    "command": "GoNavBar.goForward",
-                    "group": "navigation"
-                },
-                {
-                    "when": "config.GoNavBar.goLastEditLocation",
-                    "command": "GoNavBar.goLastEditLocation",
-                    "group": "navigation"
-                },
-                {
-                    "when": "config.GoNavBar.goToBracket",
-                    "command": "GoNavBar.goToBracket",
-                    "group": "navigation"
-                },
-                {
-                    "when": "config.GoNavBar.saveWithoutFormatting",
-                    "command": "GoNavBar.saveWithoutFormatting",
-                    "group": "navigation"
-                },
-                {
-                    "when": "config.GoNavBar.balanceOut",
-                    "command": "GoNavBar.balanceOut",
-                    "group": "navigation"
-                },
-                {
-                    "when": "config.GoNavBar.balanceIn",
-                    "command": "GoNavBar.balanceIn",
-                    "group": "navigation"
-                }
-            ]
+    "commands": [
+      {
+        "command": "GoNavBar.goBack",
+        "category": "ShortcutMenuBar",
+        "title": "Go Back",
+        "icon": {
+          "dark": "images/arrow_back_ios_dark_18dp.png",
+          "light": "images/arrow_back_ios_light_18dp.png"
         },
-        "keybindings": [
-            {
-                "command": "GoNavBar.goForward",
-                "key": "Alt+Right",
-                "mac": "Ctrl+-"
-            },
-            {
-                "command": "GoNavBar.goBack",
-                "key": "Alt+Left",
-                "mac": "Ctrl+Shift+-"
-            },
-            {
-                "command": "GoNavBar.goLastEditLocation",
-                "key": "Ctrl+K Ctrl+Q",
-                "mac": "Cmd+K Cmd+Q"
-            },
-            {
-                "command": "GoNavBar.goToBracket",
-                "key": "Ctrl+Shift+\\",
-                "mac": "Shift+Cmd+\\"
-            },
-            {
-                "command": "GoNavBar.saveWithoutFormatting",
-                "key": "Ctrl+K Ctrl+Shift+S",
-                "mac": "Cmd+K Cmd+S"
-            },
-            {
-                "command": "GoNavBar.balanceOut",
-                "key": "Ctrl+Shift+Up",
-                "mac": "Ctrl+Shift+Up"
-            },
-            {
-                "command": "GoNavBar.balanceIn",
-                "key": "Ctrl+Shift+Down",
-                "mac": "Ctrl+Shift+Down"
-            }
-        ]
+        "enablement": "canNavigateBack"
+      },
+      {
+        "command": "GoNavBar.goForward",
+        "category": "ShortcutMenuBar",
+        "title": "Go Forward",
+        "icon": {
+          "dark": "images/arrow_forward_ios_dark_18dp.png",
+          "light": "images/arrow_forward_ios_light_18dp.png"
+        },
+        "enablement": "canNavigateForward"
+      },
+      {
+        "command": "GoNavBar.goLastEditLocation",
+        "category": "ShortcutMenuBar",
+        "title": "Go Last Edit Location",
+        "icon": {
+          "dark": "images/edit_location_alt_dark_18dp.png",
+          "light": "images/edit_location_alt_light_18dp.png"
+        },
+        "enablement": "canNavigateToLastEditLocation"
+      },
+      {
+        "command": "GoNavBar.goToBracket",
+        "category": "ShortcutMenuBar",
+        "title": "Go To Bracket",
+        "icon": {
+          "dark": "images/code_braces_dark.png",
+          "light": "images/code_braces_light.png"
+        }
+      },
+      {
+        "command": "GoNavBar.saveWithoutFormatting",
+        "category": "ShortcutMenuBar",
+        "title": "Save Without Formatting",
+        "icon": {
+          "dark": "images/save_dark_18dp.png",
+          "light": "images/save_light_18dp.png"
+        },
+        "enablement": "!editorReadonly"
+      },
+      {
+        "command": "GoNavBar.balanceOut",
+        "category": "ShortcutMenuBar",
+        "title": "Balance Outward",
+        "icon": {
+          "dark": "images/baseline_format_indent_decrease_dark_18dp.png",
+          "light": "images/baseline_format_indent_decrease_light_18dp.png"
+        },
+        "enablement": "!editorReadonly"
+      },
+      {
+        "command": "GoNavBar.balanceIn",
+        "category": "ShortcutMenuBar",
+        "title": "Balance Inward",
+        "icon": {
+          "dark": "images/baseline_format_indent_increase_dark_18dp.png",
+          "light": "images/baseline_format_indent_increase_light_18dp.png"
+        },
+        "enablement": "!editorReadonly"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "when": "config.GoNavBar.goBack",
+          "command": "GoNavBar.goBack",
+          "group": "navigation"
+        },
+        {
+          "when": "config.GoNavBar.goForward",
+          "command": "GoNavBar.goForward",
+          "group": "navigation"
+        },
+        {
+          "when": "config.GoNavBar.goLastEditLocation",
+          "command": "GoNavBar.goLastEditLocation",
+          "group": "navigation"
+        },
+        {
+          "when": "config.GoNavBar.goToBracket",
+          "command": "GoNavBar.goToBracket",
+          "group": "navigation"
+        },
+        {
+          "when": "config.GoNavBar.saveWithoutFormatting",
+          "command": "GoNavBar.saveWithoutFormatting",
+          "group": "navigation"
+        },
+        {
+          "when": "config.GoNavBar.balanceOut",
+          "command": "GoNavBar.balanceOut",
+          "group": "navigation"
+        },
+        {
+          "when": "config.GoNavBar.balanceIn",
+          "command": "GoNavBar.balanceIn",
+          "group": "navigation"
+        }
+      ]
     },
-    "menus": {},
-    "scripts": {
-        "compile": "webpack",
-        "latest": "yarn upgrade-interactive --latest",
-        "lint": "eslint src --ext ts",
-        "package": "webpack --mode production --devtool hidden-source-map",
-        "pretest": "yarn run test-compile && yarn run lint",
-        "test": "node ./out/test/runTest.js",
-        "test-compile": "tsc -p ./",
-        "test-watch": "tsc -watch -p ./",
-        "vscode:prepublish": "yarn run package",
-        "watch": "webpack --watch"
-    },
-    "devDependencies": {
-        "@types/glob": "^7.1.3",
-        "@types/mocha": "^8.0.4",
-        "@types/node": "^15.12.4",
-        "@types/vscode": "^1.57.0",
-        "@typescript-eslint/eslint-plugin": "^4.28.0",
-        "@typescript-eslint/parser": "^4.28.0",
-        "eslint": "^7.29.0",
-        "eslint-plugin-sonarjs": "^0.8.0-125",
-        "glob": "^7.1.7",
-        "mocha": "^9.0.1",
-        "ts-loader": "^9.2.3",
-        "typescript": "^4.3.4",
-        "vscode-test": "^1.5.0",
-        "webpack": "^5.40.0",
-        "webpack-cli": "^4.7.2"
-    },
-    "dependencies": {
-        "@material-ui/icons": "^4.11.3"
-    }
+    "keybindings": [
+      {
+        "command": "GoNavBar.goForward",
+        "key": "Alt+Right",
+        "mac": "Ctrl+-"
+      },
+      {
+        "command": "GoNavBar.goBack",
+        "key": "Alt+Left",
+        "mac": "Ctrl+Shift+-"
+      },
+      {
+        "command": "GoNavBar.goLastEditLocation",
+        "key": "Ctrl+K Ctrl+Q",
+        "mac": "Cmd+K Cmd+Q"
+      },
+      {
+        "command": "GoNavBar.goToBracket",
+        "key": "Ctrl+Shift+\\",
+        "mac": "Shift+Cmd+\\"
+      },
+      {
+        "command": "GoNavBar.saveWithoutFormatting",
+        "key": "Ctrl+K Ctrl+Shift+S",
+        "mac": "Cmd+K Cmd+S"
+      },
+      {
+        "command": "GoNavBar.balanceOut",
+        "key": "Ctrl+Shift+Up",
+        "mac": "Ctrl+Shift+Up"
+      },
+      {
+        "command": "GoNavBar.balanceIn",
+        "key": "Ctrl+Shift+Down",
+        "mac": "Ctrl+Shift+Down"
+      }
+    ]
+  },
+  "menus": {},
+  "scripts": {
+    "compile": "webpack",
+    "latest": "yarn upgrade-interactive --latest",
+    "lint": "eslint src --ext ts",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "pretest": "yarn run test-compile && yarn run lint",
+    "test": "node ./out/test/runTest.js",
+    "test-compile": "tsc -p ./",
+    "test-watch": "tsc -watch -p ./",
+    "vscode:prepublish": "yarn run package",
+    "watch": "webpack --watch"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.1.3",
+    "@types/mocha": "^8.0.4",
+    "@types/node": "^15.12.4",
+    "@types/vscode": "^1.57.0",
+    "@typescript-eslint/eslint-plugin": "^4.28.0",
+    "@typescript-eslint/parser": "^4.28.0",
+    "eslint": "^7.29.0",
+    "eslint-plugin-sonarjs": "^0.8.0-125",
+    "glob": "^7.1.7",
+    "mocha": "^9.0.1",
+    "ts-loader": "^9.2.3",
+    "typescript": "^4.3.4",
+    "vscode-test": "^1.5.0",
+    "webpack": "^5.40.0",
+    "webpack-cli": "^4.7.2"
+  },
+  "dependencies": {
+    "@material-ui/icons": "^4.11.3"
+  }
 }
