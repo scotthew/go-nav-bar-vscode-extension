@@ -50,6 +50,14 @@ Updated readme and yarn packages.
 
 Added "Balance Inward" and "Balance Outward" shortcuts.
 
+### 0.6.0
+
+Updated packages and added web extension support.
+
+### 0.7.0
+
+Updated readme.
+
 ## Adding new Icons
 
 Add both icons dark #C5C5C5 and light #424242 to images/ folder
