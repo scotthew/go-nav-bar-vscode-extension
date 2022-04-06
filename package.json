@@ -2,9 +2,9 @@
   "name": "go-nav-bar",
   "displayName": "Go Nav Bar",
   "description": "Navigation shortcut buttons for the VSCode go menu commands",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "engines": {
-    "vscode": "^=1.61"
+    "vscode": "^1.61.0"
   },
   "publisher": "Scotthew",
   "license": "SEE LICENSE IN LICENSE",

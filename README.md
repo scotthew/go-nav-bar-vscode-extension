@@ -58,7 +58,7 @@ Updated packages and added web extension support.
 
 Updated readme.
 
-### 0.8.0
+### 0.9.0
 
 Updated vscode target to be ^=1.61
 
