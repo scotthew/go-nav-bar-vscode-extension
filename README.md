@@ -58,6 +58,10 @@ Updated packages and added web extension support.
 
 Updated readme.
 
+### 0.8.0
+
+Updated vscode target to be ^=1.61
+
 ## Adding new Icons
 
 Add both icons dark #C5C5C5 and light #424242 to images/ folder
