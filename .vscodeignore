@@ -1,16 +1,27 @@
+# Build & source
 .vscode/**
 .vscode-test/**
 out/**
 src/**
 docs/**
-*.vsix
-.gitignore
-.yarnrc
-.scratch/**
 node_modules/**
-pnpm-lock.yaml
-vsc-extension-quickstart.md
 **/tsconfig.json
 **/.eslintrc.json
 **/*.map
 **/*.ts
+
+# Secrets & env
+.env
+.env.*
+
+# Tooling & config
+.claude/**
+.scratch/**
+.gitignore
+.yarnrc
+pnpm-lock.yaml
+yarn-error.log
+vsc-extension-quickstart.md
+
+# Artifacts
+*.vsix
