@@ -46,7 +46,11 @@ export function activate(context: ExtensionContext): void {
 		void commands.executeCommand('editor.emmet.action.balanceIn');
 	});
 
-	context.subscriptions.push(goForward, goBack, goLastEditLocation, goToBracket, saveWithoutFormat, balanceIn, balanceOut);
+	const markdownPreview = commands.registerCommand('GoNavBar.markdownPreview', () => {
+		void commands.executeCommand('markdown.showPreview');
+	});
+
+	context.subscriptions.push(goForward, goBack, goLastEditLocation, goToBracket, saveWithoutFormat, balanceIn, balanceOut, markdownPreview);
 }
 
 // this method is called when your extension is deactivated

@@ -2,9 +2,9 @@
   "name": "go-nav-bar",
   "displayName": "Go Nav Bar",
   "description": "Navigation shortcut buttons for the VSCode go menu commands",
-  "version": "0.9.0",
+  "version": "1.0.0",
   "engines": {
-    "vscode": "^1.85.0"
+    "vscode": "^1.96.0"
   },
   "publisher": "Scotthew",
   "license": "SEE LICENSE IN LICENSE",
@@ -47,7 +47,10 @@
     "status",
     "title",
     "tool",
-    "toolbar"
+    "toolbar",
+    "markdown",
+    "preview",
+    "markdown preview"
   ],
   "main": "./dist/main.js",
   "contributes": {
@@ -96,6 +99,12 @@
             "type": "boolean",
             "default": true,
             "description": "show icon for 'Balance Inward'"
+          },
+          "GoNavBar.markdownPreview": {
+            "title": "Markdown Preview",
+            "type": "boolean",
+            "default": true,
+            "description": "show icon for 'Markdown: Open Preview'"
           }
         }
       }
@@ -169,6 +178,13 @@
           "light": "images/baseline_format_indent_increase_light_18dp.png"
         },
         "enablement": "!editorReadonly"
+      },
+      {
+        "command": "GoNavBar.markdownPreview",
+        "category": "ShortcutMenuBar",
+        "title": "Markdown: Open Preview",
+        "icon": "$(open-preview)",
+        "enablement": "resourceLangId == markdown"
       }
     ],
     "menus": {
@@ -206,6 +222,11 @@
         {
           "when": "config.GoNavBar.balanceIn",
           "command": "GoNavBar.balanceIn",
+          "group": "navigation"
+        },
+        {
+          "when": "config.GoNavBar.markdownPreview && resourceLangId == markdown",
+          "command": "GoNavBar.markdownPreview",
           "group": "navigation"
         }
       ]
@@ -245,6 +266,12 @@
         "command": "GoNavBar.balanceIn",
         "key": "Ctrl+Shift+Down",
         "mac": "Ctrl+Shift+Down"
+      },
+      {
+        "command": "GoNavBar.markdownPreview",
+        "key": "Ctrl+Shift+V",
+        "mac": "Shift+Cmd+V",
+        "when": "resourceLangId == markdown"
       }
     ]
   },
@@ -253,19 +280,20 @@
     "compile": "esbuild ./src/extension.ts --bundle --outfile=dist/main.js --external:vscode --format=cjs --platform=node --sourcemap",
     "watch": "esbuild ./src/extension.ts --bundle --outfile=dist/main.js --external:vscode --format=cjs --platform=node --sourcemap --watch=forever",
     "lint": "eslint src --ext ts",
-    "pretest": "pnpm run compile && pnpm run lint",
+    "pretest": "pnpm run compile && pnpm run test-compile && pnpm run lint",
     "test": "node ./out/test/runTest.js",
     "test-compile": "tsc -p ./"
   },
   "devDependencies": {
     "@types/mocha": "^10.0.0",
-    "@types/node": "^20.0.0",
-    "@types/vscode": "^1.85.0",
-    "@typescript-eslint/eslint-plugin": "^7.0.0",
-    "@typescript-eslint/parser": "^7.0.0",
+    "@types/node": "^22.0.0",
+    "@types/vscode": "^1.96.0",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
     "@vscode/test-electron": "^2.5.0",
     "esbuild": "^0.24.0",
     "eslint": "^8.57.0",
+    "mocha": "^11.0.0",
     "typescript": "^5.7.0"
   }
 }

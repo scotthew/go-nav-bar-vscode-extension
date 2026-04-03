@@ -2,11 +2,14 @@
 .vscode-test/**
 out/**
 src/**
-node_modules/**
 docs/**
+*.vsix
 .gitignore
+.yarnrc
 .scratch/**
+node_modules/**
 pnpm-lock.yaml
+vsc-extension-quickstart.md
 **/tsconfig.json
 **/.eslintrc.json
 **/*.map

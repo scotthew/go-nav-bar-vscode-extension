@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python \"C:/Users/scott/.claude/skills/doc-updater/scripts/find_next_doc.sh\")",
+      "Read(//c/Users/scott/.claude/skills/doc-updater/scripts/**)"
+    ]
+  }
+}
