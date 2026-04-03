@@ -280,7 +280,7 @@
     "compile": "esbuild ./src/extension.ts --bundle --outfile=dist/main.js --external:vscode --format=cjs --platform=node --sourcemap",
     "watch": "esbuild ./src/extension.ts --bundle --outfile=dist/main.js --external:vscode --format=cjs --platform=node --sourcemap --watch=forever",
     "lint": "eslint src --ext ts",
-    "pretest": "pnpm run compile && pnpm run lint",
+    "pretest": "pnpm run compile && pnpm run test-compile && pnpm run lint",
     "test": "node ./out/test/runTest.js",
     "test-compile": "tsc -p ./"
   },
