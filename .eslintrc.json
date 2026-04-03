@@ -2,21 +2,19 @@
     "root": true,
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
-        "ecmaVersion": 6,
+        "ecmaVersion": 2022,
         "sourceType": "module",
         "project": [
             "./tsconfig.json"
         ]
     },
     "plugins": [
-        "@typescript-eslint",
-        "sonarjs"
+        "@typescript-eslint"
     ],
     "extends": [
         "eslint:recommended",
-        "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
-        "plugin:@typescript-eslint/recommended-requiring-type-checking"
+        "plugin:@typescript-eslint/recommended-type-checked"
     ],
     "rules": {
         "@typescript-eslint/naming-convention": "warn",
