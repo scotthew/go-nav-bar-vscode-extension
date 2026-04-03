@@ -150,7 +150,7 @@ Depends on: none
 }
 ```
 
-> **Missing dependency:** `mocha` is imported in `src/test/suite/index.ts:1` but not listed in devDependencies. esbuild silently externalizes it, masking the error. Add `"mocha": "^11.0.0"` to devDependencies. <!-- TODO: verify mocha dependency is present after npm install -->
+> **Missing dependency:** `mocha` is imported in `src/test/suite/index.ts:1` but not listed in devDependencies. esbuild silently externalizes it, masking the error. Add `"mocha": "^11.0.0"` to devDependencies. ✅ Verified: `mocha` `^11.0.0` is present in `package.json` devDependencies.
 
 **Remove obsolete devDependencies** (already done in prior commits — verify none crept back):
 - `@types/glob`, `glob`, `ts-loader`, `vscode-test`, `webpack`, `webpack-cli`, `eslint-plugin-sonarjs`
@@ -191,7 +191,7 @@ Depends on: Tasks 1-3 (must complete Phase 1 before documenting the new feature)
 **Bump version** to `1.0.0`.
 
 **Add keywords** for the new feature:
-```
+```text
 "markdown", "preview", "markdown preview"
 ```
 
@@ -219,7 +219,7 @@ Depends on: Tasks 1-3 (must complete Phase 1 before documenting the new feature)
 ```
 
 **Update .vscodeignore** to exclude docs and vsix files:
-```
+```text
 .vscode/**
 .vscode-test/**
 out/**
@@ -356,3 +356,33 @@ All 7 existing commands remain exactly as-is:
 - Framework: Mocha (already configured in `src/test/suite/index.ts`)
 - Test runner: `@vscode/test-electron` (integration tests run inside VS Code host)
 
+---
+
+## Addendum: Changes Since Original Writing
+
+### 2026-04-02 — `pretest` script updated to include `test-compile`
+
+**Commit:** [`637db21`](https://github.com/scotthew/go-nav-bar-vscode-extension/commit/637db21)
+
+The doc states `pretest` runs `pnpm run compile && pnpm run lint` (Task 4, line 177). This was changed to include `test-compile` so that `pnpm test` can locate `out/test/runTest.js`:
+
+```text
+"pretest": "pnpm run compile && pnpm run test-compile && pnpm run lint"
+```
+
+The corrected pipeline is: `compile` → `test-compile` → `lint`.
+
+---
+
+## Doc Update Log
+
+### 2026-04-02
+
+- **Code refs replaced:** 0 (all code blocks match implementation, no stale references)
+- **Paths corrected:** 0 (all file paths valid)
+- **TODOs resolved:** 1 (mocha dependency verification — confirmed present in `package.json`)
+- **TODOs outstanding:** 1 (`<!-- TODO: add minimal extension activation test after v1.0.0 release -->` in Test Coverage section — intentionally deferred, `extension.test.ts` exists but contains only boilerplate)
+- **Addendums added:** 1 (`pretest` script now includes `test-compile` step, diverging from Task 4 description)
+- **Diagrams converted:** 0
+- **Formatting fixes:** 3 (code-block: 2 missing language identifiers added; whitespace: 1 TODO comment replaced with inline note)
+- **Duplicates removed:** 0
