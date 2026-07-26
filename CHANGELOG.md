@@ -1,5 +1,13 @@
 # Change Log
 
+## [1.1.0] - 2026-07-26
+
+### Added
+- Format Document button (runs `editor.action.formatDocument`), configurable via `GoNavBar.formatDocument`
+
+### Changed
+- Buttons now have an explicit order: Markdown Preview, Save Without Formatting, Format Document, Go Back, Go Forward, Go Last Edit Location, Go To Bracket, Balance Outward, Balance Inward. Buttons from other extensions (e.g. Markdown Preview Enhanced) appear right after Markdown Preview.
+
 ## [1.0.1] - 2026-07-26
 
 ### Changed

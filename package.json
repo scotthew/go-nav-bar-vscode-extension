@@ -2,7 +2,7 @@
   "name": "go-nav-bar",
   "displayName": "Go Nav Bar",
   "description": "Navigation shortcut buttons for the VSCode go menu commands",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "engines": {
     "vscode": "^1.96.0"
   },
@@ -88,6 +88,12 @@
             "default": true,
             "description": "show icon for 'Save Without Formatting'"
           },
+          "GoNavBar.formatDocument": {
+            "title": "Format Document",
+            "type": "boolean",
+            "default": true,
+            "description": "show icon for 'Format Document'"
+          },
           "GoNavBar.balanceOut": {
             "title": "Balance Outward",
             "type": "boolean",
@@ -160,6 +166,13 @@
         "enablement": "!editorReadonly"
       },
       {
+        "command": "GoNavBar.formatDocument",
+        "category": "ShortcutMenuBar",
+        "title": "Format Document",
+        "icon": "$(wand)",
+        "enablement": "editorHasDocumentFormattingProvider && !editorReadonly"
+      },
+      {
         "command": "GoNavBar.balanceOut",
         "category": "ShortcutMenuBar",
         "title": "Balance Outward",
@@ -190,44 +203,49 @@
     "menus": {
       "editor/title": [
         {
-          "when": "config.GoNavBar.goBack",
-          "command": "GoNavBar.goBack",
-          "group": "navigation"
-        },
-        {
-          "when": "config.GoNavBar.goForward",
-          "command": "GoNavBar.goForward",
-          "group": "navigation"
-        },
-        {
-          "when": "config.GoNavBar.goLastEditLocation",
-          "command": "GoNavBar.goLastEditLocation",
-          "group": "navigation"
-        },
-        {
-          "when": "config.GoNavBar.goToBracket",
-          "command": "GoNavBar.goToBracket",
-          "group": "navigation"
+          "when": "config.GoNavBar.markdownPreview && resourceLangId == markdown",
+          "command": "GoNavBar.markdownPreview",
+          "group": "navigation@-1"
         },
         {
           "when": "config.GoNavBar.saveWithoutFormatting",
           "command": "GoNavBar.saveWithoutFormatting",
-          "group": "navigation"
+          "group": "navigation@1"
+        },
+        {
+          "when": "config.GoNavBar.formatDocument",
+          "command": "GoNavBar.formatDocument",
+          "group": "navigation@2"
+        },
+        {
+          "when": "config.GoNavBar.goBack",
+          "command": "GoNavBar.goBack",
+          "group": "navigation@3"
+        },
+        {
+          "when": "config.GoNavBar.goForward",
+          "command": "GoNavBar.goForward",
+          "group": "navigation@4"
+        },
+        {
+          "when": "config.GoNavBar.goLastEditLocation",
+          "command": "GoNavBar.goLastEditLocation",
+          "group": "navigation@5"
+        },
+        {
+          "when": "config.GoNavBar.goToBracket",
+          "command": "GoNavBar.goToBracket",
+          "group": "navigation@6"
         },
         {
           "when": "config.GoNavBar.balanceOut",
           "command": "GoNavBar.balanceOut",
-          "group": "navigation"
+          "group": "navigation@7"
         },
         {
           "when": "config.GoNavBar.balanceIn",
           "command": "GoNavBar.balanceIn",
-          "group": "navigation"
-        },
-        {
-          "when": "config.GoNavBar.markdownPreview && resourceLangId == markdown",
-          "command": "GoNavBar.markdownPreview",
-          "group": "navigation"
+          "group": "navigation@8"
         }
       ]
     },
@@ -256,6 +274,11 @@
         "command": "GoNavBar.saveWithoutFormatting",
         "key": "Ctrl+K Ctrl+Shift+S",
         "mac": "Cmd+K Cmd+S"
+      },
+      {
+        "command": "GoNavBar.formatDocument",
+        "key": "Shift+Alt+F",
+        "mac": "Shift+Alt+F"
       },
       {
         "command": "GoNavBar.balanceOut",

@@ -4,14 +4,17 @@
 
 ## Editor Title Menu Buttons
 
-Editor title menu buttons include:
+Editor title menu buttons include (in display order):
 
-- Go -> Forward
+- Markdown: Open Preview (visible only on markdown files)
+- File -> Save without Formatting
+- Format Document
 - Go -> Back
+- Go -> Forward
 - Go -> Last Edit Location
 - Go -> Go to Bracket
-- File -> Save without Formatting
-- Markdown: Open Preview (visible only on markdown files)
+- Balance Outward
+- Balance Inward
 
 ![Go Nav Bar Screenshot](/images/go_nav_bar_screenshot.png)
 
@@ -24,6 +27,9 @@ This extension contributes the following settings:
 - `GoNavBar.goLastEditLocation`: show icon for 'Go Last Edit Location'
 - `GoNavBar.goToBracket`: show icon for 'Go To Bracket'
 - `GoNavBar.saveWithoutFormatting`: show icon for 'Save Without Formatting'
+- `GoNavBar.formatDocument`: show icon for 'Format Document'
+- `GoNavBar.balanceOut`: show icon for 'Balance Outward'
+- `GoNavBar.balanceIn`: show icon for 'Balance Inward'
 - `GoNavBar.markdownPreview`: show icon for 'Markdown: Open Preview'
 
 ## Known Issues
@@ -73,3 +79,7 @@ Icons can be found here:
 - [Google Font Material Icons](https://fonts.google.com/icons?selected=Material+Icons)
 - [Material Design Icons](https://materialdesignicons.com/)
 - [Flat Icon](https://www.flaticon.com/)
+
+## Links
+
+- [VS Code Marketplace](https://marketplace.visualstudio.com/manage/publishers/Scotthew)

@@ -38,6 +38,10 @@ export function activate(context: ExtensionContext): void {
 		void commands.executeCommand('workbench.action.files.saveWithoutFormatting');
 	});
 
+	const formatDocument = commands.registerCommand('GoNavBar.formatDocument', () => {
+		void commands.executeCommand('editor.action.formatDocument');
+	});
+
 	const balanceOut = commands.registerCommand('GoNavBar.balanceOut', () => {
 		void commands.executeCommand('editor.emmet.action.balanceOut');
 	});
@@ -50,7 +54,7 @@ export function activate(context: ExtensionContext): void {
 		void commands.executeCommand('markdown.showPreview');
 	});
 
-	context.subscriptions.push(goForward, goBack, goLastEditLocation, goToBracket, saveWithoutFormat, balanceIn, balanceOut, markdownPreview);
+	context.subscriptions.push(goForward, goBack, goLastEditLocation, goToBracket, saveWithoutFormat, formatDocument, balanceIn, balanceOut, markdownPreview);
 }
 
 // this method is called when your extension is deactivated
