@@ -11,6 +11,7 @@ Editor title menu buttons include:
 - Go -> Last Edit Location
 - Go -> Go to Bracket
 - File -> Save without Formatting
+- Markdown: Open Preview (visible only on markdown files)
 
 ![Go Nav Bar Screenshot](/images/go_nav_bar_screenshot.png)
 
@@ -23,6 +24,7 @@ This extension contributes the following settings:
 - `GoNavBar.goLastEditLocation`: show icon for 'Go Last Edit Location'
 - `GoNavBar.goToBracket`: show icon for 'Go To Bracket'
 - `GoNavBar.saveWithoutFormatting`: show icon for 'Save Without Formatting'
+- `GoNavBar.markdownPreview`: show icon for 'Markdown: Open Preview'
 
 ## Known Issues
 
