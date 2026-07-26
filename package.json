@@ -285,15 +285,15 @@
     "test-compile": "tsc -p ./"
   },
   "devDependencies": {
-    "@types/mocha": "^10.0.0",
-    "@types/node": "^22.0.0",
-    "@types/vscode": "^1.96.0",
-    "@typescript-eslint/eslint-plugin": "^8.0.0",
-    "@typescript-eslint/parser": "^8.0.0",
-    "@vscode/test-electron": "^2.5.0",
-    "esbuild": "^0.24.0",
-    "eslint": "^8.57.0",
-    "mocha": "^11.0.0",
-    "typescript": "^5.7.0"
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^22.20.1",
+    "@types/vscode": "~1.96.0",
+    "@typescript-eslint/eslint-plugin": "^8.65.0",
+    "@typescript-eslint/parser": "^8.65.0",
+    "@vscode/test-electron": "^3.1.0",
+    "esbuild": "^0.28.1",
+    "eslint": "^8.57.1",
+    "mocha": "^11.7.6",
+    "typescript": "^5.9.3"
   }
 }

@@ -6,6 +6,7 @@
 - Documented the Markdown Preview button and setting in the README
 - Updated .vscodeignore to exclude dev files from the packaged extension
 - Removed stale build artifact from the package
+- Updated dev dependencies (esbuild 0.28, @vscode/test-electron 3.1, TypeScript 5.9)
 
 ## [1.0.0] - 2026-04-02
 
